@@ -1,14 +1,10 @@
 # `bake-markdown`
 
-Markdown normalization for Bake projects. It joins soft source line breaks in
-Markdown files while preserving explicit hard breaks, code, and block
-boundaries.
+Markdown normalization for Bake projects. It joins soft source line breaks in Markdown files while preserving explicit hard breaks, code, and block boundaries.
 
 ## Motivation
 
-Hard-wrapped paragraphs are difficult to edit consistently. This crate uses
-the `socketry-markdown` syntax tree and serializer so normalization follows
-Markdown structure instead of changing lines with regular expressions.
+Hard-wrapped paragraphs are difficult to edit consistently. This crate uses the `socketry-markdown` syntax tree and serializer so normalization follows Markdown structure instead of changing lines with regular expressions.
 
 ## Usage
 
@@ -34,7 +30,18 @@ Rust callers can use `bake_markdown::normalize_document` directly.
 ## Releases
 
 <!-- bake-readme:releases:start -->
+
 See [releases.md](releases.md) for the full release history.
+
+### v0.3.1
+
+- Resolve development task dependencies to the current checkout.
+
+- Adopt `socketry-project` 0.3.7 for shared project tasks and Markdown normalization.
+
+- Require the aggregate test and coverage result for pull request merges.
+
+- Avoid duplicate ordinary test runs in pull request publishing checks.
 
 ### v0.3.0
 
@@ -44,10 +51,6 @@ See [releases.md](releases.md) for the full release history.
 
 - Accept Markdown paths as positional arguments to `markdown:normalize`.
 
-### v0.1.0
-
-- Add the `markdown:normalize` task to join soft source line breaks in Markdown
-  files while preserving explicit hard breaks, code, and block boundaries.
 <!-- bake-readme:releases:end -->
 
 ## See Also
@@ -60,4 +63,4 @@ Please open an issue or pull request on [GitHub](https://github.com/socketry/bak
 
 ### Agent Context
 
-Before contributing, read `.agents/context/index.md` and the relevant context files it links. If the index is missing or out of date, run `cargo bake agent:context:install` to install context from dependencies and refresh the index.
+Run `cargo bake agent:context:install` to install shared context and skills. Read `.agents/context/index.md` to find relevant guides, follow `agents.md` if present, and apply skills under `.agents/skills/`. The installer preserves repository-owned `agents.md`; it does not create or regenerate that file.
