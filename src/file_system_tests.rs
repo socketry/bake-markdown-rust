@@ -53,7 +53,7 @@ fn rejects_an_empty_path_list() {
     )
     .unwrap_err();
 
-    assert_eq!(error.to_string(), "provide one or more --path arguments");
+    assert_eq!(error.to_string(), "provide one or more file paths");
 }
 
 #[test]
