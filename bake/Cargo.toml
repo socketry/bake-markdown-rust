@@ -1,0 +1,10 @@
+[package]
+name = "bake-markdown-project"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+bake = "0.18.0"
+bake-markdown = { path = ".." }
+socketry-project = ">=0.3.3"
