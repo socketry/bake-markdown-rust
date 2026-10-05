@@ -37,7 +37,7 @@ fn normalize_files_with(
     normalize: impl Fn(&str) -> std::result::Result<String, Message>,
 ) -> Result<usize> {
     if paths.is_empty() {
-        return Err(Error::new("provide one or more --path arguments"));
+        return Err(Error::new("provide one or more file paths"));
     }
 
     let mut changed = 0;

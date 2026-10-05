@@ -15,11 +15,19 @@ their delimiters and content remain intact. The serializer canonicalizes
 line endings to LF and emits a trailing newline for non-empty documents. The
 normalizer does not wrap paragraphs to a target line width.
 
-The task accepts one or more repeatable `--path` arguments. Paths are resolved
-relative to the Bake project root:
+The task accepts one or more positional paths, resolved relative to the Bake
+project root. For example, the shell expands a glob before Bake receives the
+paths:
 
 ```sh
-cargo bake markdown:normalize --path readme.md --path context/guide.md
+cargo bake markdown:normalize **/*.md
+```
+
+Use `::` before another task because the variadic path list consumes all
+positional values up to the end of the command:
+
+```sh
+cargo bake markdown:normalize **/*.md :: null
 ```
 
 It writes a file only when the serialized content differs from its source.

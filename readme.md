@@ -26,7 +26,7 @@ use bake_markdown as _;
 Normalize one or more files relative to the project root:
 
 ```sh
-cargo bake markdown:normalize --path readme.md --path context/guide.md
+cargo bake markdown:normalize readme.md context/guide.md
 ```
 
 Rust callers can use `bake_markdown::normalize_document` directly.

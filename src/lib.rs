@@ -60,18 +60,16 @@ mod file_system;
 
 use std::path::PathBuf;
 
-/// Normalize one or more Markdown files beneath the Bake project root.
+/// Normalize Markdown files beneath the Bake project root.
 #[bake::task]
 pub fn normalize(
     context: &mut bake::Context,
-    #[bake(help = "Repeat for each Markdown file, relative to the project root.")] path: Vec<
-        PathBuf,
-    >,
+    #[bake(positional, help = "Markdown files, relative to the project root.")] paths: Vec<PathBuf>,
 ) -> bake::Result<String> {
-    let changed = file_system::normalize_files(context.root(), &path)?;
+    let changed = file_system::normalize_files(context.root(), &paths)?;
     Ok(format!(
         "Normalized {changed} of {} Markdown files",
-        path.len()
+        paths.len()
     ))
 }
 
