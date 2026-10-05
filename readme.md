@@ -8,15 +8,12 @@ Hard-wrapped paragraphs are difficult to edit consistently. This crate uses the 
 
 ## Usage
 
-Add the crate to the project's private `bake/` package and link its tasks:
+Add the crate to the project's private `bake/` package and regenerate its task links:
 
-```toml
-[dependencies]
-bake-markdown = "0.3"
-```
-
-```rust,ignore
-use bake_markdown as _;
+```sh
+cargo bake --regenerate
+cargo add --manifest-path bake/Cargo.toml bake-markdown
+cargo bake --regenerate
 ```
 
 Normalize one or more files relative to the project root:
@@ -26,6 +23,10 @@ cargo bake markdown:normalize readme.md context/guide.md
 ```
 
 Rust callers can use `bake_markdown::normalize_document` directly.
+
+## Releasing
+
+Prepare a release with `cargo bake cargo:version:patch` (or `minor`, `major`, or `bump --version X.Y.Z`), then run `cargo bake cargo:release` and open a pull request. After review and merge, GitHub Actions publishes the release when the configured `crates-io` environment approves it. Follow the shared [Releasing skill](https://github.com/socketry/socketry-project-rust/blob/main/context/releasing.md) for the standard process.
 
 ## Releases
 
