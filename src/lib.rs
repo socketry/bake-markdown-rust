@@ -50,7 +50,6 @@ pub fn normalize_document_with_options(
         &tree,
         &MarkdownOptions {
             line_wrapping: LineWrapping::Unwrap,
-            bullet: '-',
             ..MarkdownOptions::default()
         },
     )
