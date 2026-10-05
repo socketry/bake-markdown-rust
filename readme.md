@@ -34,6 +34,10 @@ Prepare a release with `cargo bake cargo:version:patch` (or `minor`, `major`, or
 
 See [releases.md](releases.md) for the full release history.
 
+### v0.3.2
+
+- Document the shared release process.
+
 ### v0.3.1
 
 - Resolve development task dependencies to the current checkout.
@@ -47,10 +51,6 @@ See [releases.md](releases.md) for the full release history.
 ### v0.3.0
 
 - Normalize unordered Markdown lists with hyphen markers.
-
-### v0.2.0
-
-- Accept Markdown paths as positional arguments to `markdown:normalize`.
 
 <!-- bake-readme:releases:end -->
 
