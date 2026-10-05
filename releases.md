@@ -1,5 +1,9 @@
 # Releases
 
+## v0.3.2
+
+- Document the shared release process.
+
 ## v0.3.1
 
 - Resolve development task dependencies to the current checkout.
