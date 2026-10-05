@@ -7,7 +7,6 @@
 //! serializes the result with soft source line breaks unwrapped. CommonMark
 //! includes inline code. The `markdown:normalize` Bake task applies this to
 //! one or more files.
-
 use socketry_markdown::{
     LineWrapping, MarkdownOptions, ParseOptions, message::Message, to_markdown_with_options,
     to_mdast,

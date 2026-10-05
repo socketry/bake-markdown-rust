@@ -1,6 +1,6 @@
 # Releases
 
-## Unreleased
+## v0.2.0
 
 - Accept Markdown paths as positional arguments to `markdown:normalize`.
 

@@ -35,6 +35,15 @@ Rust callers can use `bake_markdown::normalize_document` directly.
 
 <!-- bake-readme:releases:start -->
 See [releases.md](releases.md) for the full release history.
+
+### v0.2.0
+
+- Accept Markdown paths as positional arguments to `markdown:normalize`.
+
+### v0.1.0
+
+- Add the `markdown:normalize` task to join soft source line breaks in Markdown
+  files while preserving explicit hard breaks, code, and block boundaries.
 <!-- bake-readme:releases:end -->
 
 ## See Also
