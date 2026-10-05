@@ -16,7 +16,7 @@ Add the crate to the project's private `bake/` package and link its tasks:
 
 ```toml
 [dependencies]
-bake-markdown = "0.1"
+bake-markdown = "0.3"
 ```
 
 ```rust,ignore
@@ -35,6 +35,10 @@ Rust callers can use `bake_markdown::normalize_document` directly.
 
 <!-- bake-readme:releases:start -->
 See [releases.md](releases.md) for the full release history.
+
+### v0.3.0
+
+- Normalize unordered Markdown lists with hyphen markers.
 
 ### v0.2.0
 
