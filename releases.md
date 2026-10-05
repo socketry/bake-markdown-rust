@@ -1,5 +1,9 @@
 # Releases
 
+## Unreleased
+
+- Normalize unordered Markdown lists with hyphen markers.
+
 ## v0.2.0
 
 - Accept Markdown paths as positional arguments to `markdown:normalize`.

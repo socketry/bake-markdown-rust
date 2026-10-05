@@ -33,6 +33,13 @@ fn normalization_is_idempotent() {
 }
 
 #[test]
+fn normalizes_unordered_lists_to_hyphen_markers() {
+    let normalized = normalize_document("* first\n* second\n").unwrap();
+
+    assert_eq!(normalized, "- first\n- second\n");
+}
+
+#[test]
 fn preserves_front_matter_and_unwraps_nested_phrasing() {
     let source = "---\ntitle: Example\n---\n\nA *wrapped\nemphasis* paragraph.\n";
 
@@ -70,14 +77,14 @@ fn preserves_inline_code_and_math() {
 }
 
 #[test]
-fn preserves_gfm_tables_and_other_gfm_constructs() {
+fn preserves_gfm_tables_and_normalizes_task_list_markers() {
     let source = "| key | value |\n| --- | --- |\n| name | Ada |\n\n~~removed~~ and a task:\n\n- [x] done\n- [ ] pending\n\nA claim[^note].\n\n[^note]: A note.\n";
 
     let normalized = normalize_document(source).unwrap();
 
     assert_eq!(
         normalized,
-        "| key | value |\n| --- | --- |\n| name | Ada |\n\n~~removed~~ and a task:\n\n* [x] done\n* [ ] pending\n\nA claim[^note].\n\n[^note]: A note.\n"
+        "| key | value |\n| --- | --- |\n| name | Ada |\n\n~~removed~~ and a task:\n\n- [x] done\n- [ ] pending\n\nA claim[^note].\n\n[^note]: A note.\n"
     );
 }
 

@@ -86,7 +86,7 @@ name = "bake-markdown"
 version = "0.2.0"
 dependencies = [
  "bake",
- "socketry-markdown 0.2.0",
+ "socketry-markdown 0.3.0",
  "tempfile",
 ]
 
@@ -663,9 +663,9 @@ dependencies = [
 
 [[package]]
 name = "socketry-markdown"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37d3a646262edeca60e86e4c4dd493167e74beb03ea75a60b2d5c40e6d6d8c5b"
+checksum = "8c02f802fe678b660dd21a6b6130bc2d0eb3423c24b9f26ebddb46514769e788"
 dependencies = [
  "regex",
  "unicode-id",

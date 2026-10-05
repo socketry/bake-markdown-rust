@@ -13,7 +13,8 @@ The serializer preserves explicit Markdown hard breaks, code contents, and
 block boundaries. YAML and TOML front matter are parsed as front matter so
 their delimiters and content remain intact. The serializer canonicalizes
 line endings to LF and emits a trailing newline for non-empty documents. The
-normalizer does not wrap paragraphs to a target line width.
+normalizer does not wrap paragraphs to a target line width. It uses the
+serializer's default `-` marker for unordered lists.
 
 The task accepts one or more positional paths, resolved relative to the Bake
 project root. For example, the shell expands a glob before Bake receives the
